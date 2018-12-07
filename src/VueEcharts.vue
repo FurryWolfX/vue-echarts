@@ -1,5 +1,5 @@
 <template>
-    <div ref="echarts" style="width: 100%;height: 100%;"></div>
+  <div ref="echarts" style="width: 100%;height: 100%;"></div>
 </template>
 
 <script>
@@ -10,6 +10,9 @@ export default {
   mounted() {
     this.myChart = echarts.init(this.$refs.echarts);
     this.myChart.setOption(this.option);
+    this.myChart.on("click", param => {
+      this.$emit("click", param);
+    });
   },
   destroyed() {
     this.myChart.dispose();

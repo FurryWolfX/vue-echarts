@@ -1,7 +1,7 @@
 {
   "name": "@wolfx/vue-echarts",
   "description": "echarts wrap for vue",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "author": "wolfx",
   "license": "MIT",
   "private": false,

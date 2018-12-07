@@ -57,7 +57,7 @@
 ```html
 <template>
   <div class="container">
-    <vue-echarts :option="option"></vue-echarts>
+    <vue-echarts :option="option" @click="params => {}"></vue-echarts>
   </div>
 </template>
 
