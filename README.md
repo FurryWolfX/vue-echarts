@@ -2,6 +2,8 @@
 
 > echarts的vue封装，一旦options变化会自动重新渲染。
 
+> 该组件将echarts作为外部依赖，需要用户自己引入。
+
 # 示例代码
 
 ## 直接使用
@@ -22,6 +24,7 @@
   <body>
     <div id="app"><vue-echarts :option="option"></vue-echarts></div>
     <script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
+    <script crossorigin="*" integrity="sha384-gb8mitZ44MWVFB3GKzmtx1OCjOh3Cj4mgusyTvNzl1Nu31l0em1FrApJindwVAe0" src="https://lib.baomitu.com/echarts/4.2.1/echarts.min.js"></script>
     <script src="./dist/VueEcharts.js"></script>
     <script>
       new Vue({
@@ -72,11 +75,4 @@
     }
   }
 </script>
-```
-
-## 获取原始 echarts 对象
-
-```javascript
-import VueEcharts from "@wolfx/vue-echarts";
-console.log(VueEcharts.echarts);
 ```

@@ -10,6 +10,9 @@ module.exports = {
     libraryTarget: "umd",
     filename: "VueEcharts.js"
   },
+  externals: {
+    echarts: "echarts"
+  },
   module: {
     rules: [
       {
