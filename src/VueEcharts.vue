@@ -4,6 +4,11 @@
 
 <script>
 import echarts from "echarts";
+
+function resizeChart(myChart) {
+  myChart.resize();
+}
+
 export default {
   name: "VueEcharts",
   props: ["option"],
@@ -13,9 +18,11 @@ export default {
     this.myChart.on("click", param => {
       this.$emit("click", param);
     });
+    window.addEventListener("resize", this.resizeChart);
   },
   destroyed() {
     this.myChart.dispose();
+    window.removeEventListener("resize", this.resizeChart);
   },
   watch: {
     option: {
@@ -25,6 +32,11 @@ export default {
         this.myChart.setOption(this.option);
       },
       deep: true
+    }
+  },
+  methods: {
+    resizeChart() {
+      this.myChart.resize();
     }
   }
 };
