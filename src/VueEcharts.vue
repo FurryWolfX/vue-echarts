@@ -5,10 +5,6 @@
 <script>
 import echarts from "echarts";
 
-function resizeChart(myChart) {
-  myChart.resize();
-}
-
 export default {
   name: "VueEcharts",
   props: ["option"],
@@ -19,6 +15,9 @@ export default {
       this.$emit("click", param);
     });
     window.addEventListener("resize", this.resizeChart);
+  },
+  activated() {
+    this.resizeChart();
   },
   destroyed() {
     this.myChart.dispose();
