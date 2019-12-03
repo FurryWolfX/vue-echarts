@@ -7,9 +7,9 @@ import echarts from "echarts";
 
 export default {
   name: "VueEcharts",
-  props: ["option"],
+  props: ["option", "renderer"],
   mounted() {
-    this.myChart = echarts.init(this.$refs.echarts);
+    this.myChart = echarts.init(this.$refs.echarts, null, {renderer: this.renderer || "canvas"});
     this.myChart.setOption(this.option);
     this.myChart.on("click", param => {
       this.$emit("click", param);

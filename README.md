@@ -80,3 +80,9 @@
 ## 重置大小
 
 默认情况下改变窗口大小会自动触发重置，如果需要手动触发，获取组件的 `ref` 后调用组件的 `resizeChart()` 方法。
+
+## 使用 svg 渲染模式
+
+```html
+<vue-echarts :option="option" renderer="svg" @click="params => {}"></vue-echarts>
+```
