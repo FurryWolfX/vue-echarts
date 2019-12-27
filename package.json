@@ -1,7 +1,7 @@
 {
   "name": "@wolfx/vue-echarts",
   "description": "echarts wrap for vue",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "author": "wolfx",
   "license": "MIT",
   "private": false,
@@ -17,7 +17,7 @@
     "not ie <= 8"
   ],
   "devDependencies": {
-    "echarts": "^4.2.0-rc.2",
+    "echarts": "^4.5.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",

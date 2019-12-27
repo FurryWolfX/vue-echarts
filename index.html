@@ -1,58 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <title>vue-echarts</title>
-  <style>
-    #app {
-      height: 300px;
-      width: 100%;
-    }
-  </style>
-</head>
-<body>
-<div id="app">
-  <vue-echarts renderer="svg" :option="option"></vue-echarts>
-</div>
-<script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
-<script crossorigin="*" integrity="sha384-gb8mitZ44MWVFB3GKzmtx1OCjOh3Cj4mgusyTvNzl1Nu31l0em1FrApJindwVAe0"
-        src="https://lib.baomitu.com/echarts/4.2.1/echarts.min.js"></script>
-<script src="./dist/VueEcharts.js"></script>
-<script>
-  new Vue({
-    el: "#app",
-    components: {VueEcharts: VueEcharts.default},
-    data: {
-      option: {
-        xAxis: {
-          type: "category",
-          boundaryGap: false,
-          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-        },
-        yAxis: {
-          type: "value"
-        },
-        series: [
-          {
-            data: [820, 932, 901, 934, 1290, 1330, 1320],
-            type: "line",
-            areaStyle: {
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                {
-                  offset: 0,
-                  color: "rgba(0,0,0,0)",
-                },
-                {
-                  offset: 1,
-                  color: "rgba(0,0,0,1)",
-                },
-              ]),
-            },
-          }
-        ]
+  <head>
+    <meta charset="utf-8" />
+    <title>vue-echarts</title>
+    <style>
+      #app {
+        height: 300px;
+        width: 100%;
       }
-    }
-  });
-</script>
-</body>
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <vue-echarts
+        renderer="svg"
+        :option="option"
+        :carousel="carousel"
+      ></vue-echarts>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
+    <script
+      crossorigin="*"
+      integrity="sha384-gb8mitZ44MWVFB3GKzmtx1OCjOh3Cj4mgusyTvNzl1Nu31l0em1FrApJindwVAe0"
+      src="https://lib.baomitu.com/echarts/4.2.1/echarts.min.js"
+    ></script>
+    <script src="./dist/VueEcharts.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        components: { VueEcharts: VueEcharts.default },
+        data: {
+          carousel: {
+            interval: 2000,
+            loopSeries: false,
+            seriesIndex: 0
+          },
+          option: {
+            tooltip: {
+              trigger: "axis"
+            },
+            xAxis: {
+              type: "category",
+              boundaryGap: false,
+              data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+            },
+            yAxis: {
+              type: "value"
+            },
+            series: [
+              {
+                data: [820, 932, 901, 934, 1290, 1330, 1320],
+                type: "line",
+                areaStyle: {
+                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                    {
+                      offset: 0,
+                      color: "rgba(0,0,0,0)"
+                    },
+                    {
+                      offset: 1,
+                      color: "rgba(0,0,0,1)"
+                    }
+                  ])
+                }
+              }
+            ]
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
