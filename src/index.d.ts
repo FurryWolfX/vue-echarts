@@ -1,6 +1,6 @@
 import { Vue } from "vue/types/vue";
 
-declare class VueEcharts extends Vue{
+export default class VueEcharts extends Vue{
   option: any;
   renderer: any;
   carousel: any;

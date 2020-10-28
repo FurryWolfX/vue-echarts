@@ -1,7 +1,7 @@
 {
   "name": "@wolfx/vue-echarts",
   "description": "echarts wrap for vue",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "publishConfig": {
     "registry": " https://registry.npmjs.org"
   },
