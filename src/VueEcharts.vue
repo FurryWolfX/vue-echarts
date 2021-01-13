@@ -12,6 +12,11 @@ export default {
       type: Object,
       default: () => ({})
     },
+    noMerge: {
+      // 为 true 时不合并
+      type: Boolean,
+      default: true
+    },
     renderer: {
       type: String,
       default: "canvas"
@@ -45,7 +50,7 @@ export default {
       //深度监听，可监听到对象、数组的变化
       handler(newV, oldV) {
         // do something, 可使用this
-        this.myChart.setOption(this.option);
+        this.myChart.setOption(this.option, this.noMerge);
         this.initCarousel();
       },
       deep: true
