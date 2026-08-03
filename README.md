@@ -94,37 +94,35 @@
   </head>
   <body>
     <div id="app"><vue-echarts :option="option"></vue-echarts></div>
-    <script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
-    <script
-      crossorigin="*"
-      integrity="sha384-gb8mitZ44MWVFB3GKzmtx1OCjOh3Cj4mgusyTvNzl1Nu31l0em1FrApJindwVAe0"
-      src="https://lib.baomitu.com/echarts/4.2.1/echarts.min.js"
-    ></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/echarts@6/dist/echarts.min.js"></script>
     <script src="./dist/VueEcharts.js"></script>
     <script>
-      new Vue({
-        el: "#app",
+      const { createApp } = Vue;
+      createApp({
         components: { VueEcharts: VueEcharts.default },
-        data: {
-          option: {
-            xAxis: {
-              type: "category",
-              boundaryGap: false,
-              data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-            },
-            yAxis: {
-              type: "value"
-            },
-            series: [
-              {
-                data: [820, 932, 901, 934, 1290, 1330, 1320],
-                type: "line",
-                areaStyle: {}
-              }
-            ]
-          }
+        data() {
+          return {
+            option: {
+              xAxis: {
+                type: "category",
+                boundaryGap: false,
+                data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+              },
+              yAxis: {
+                type: "value"
+              },
+              series: [
+                {
+                  data: [820, 932, 901, 934, 1290, 1330, 1320],
+                  type: "line",
+                  areaStyle: {}
+                }
+              ]
+            }
+          };
         }
-      });
+      }).mount("#app");
     </script>
   </body>
 </html>

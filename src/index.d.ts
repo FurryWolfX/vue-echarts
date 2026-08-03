@@ -1,15 +1,26 @@
-import { Vue } from "vue/types/vue";
+import type { DefineComponent } from "vue";
 
-export default class VueEcharts extends Vue{
-  option: any;
-  renderer: any;
-  carousel: any;
-  loopShow: any;
-  myChart: any;
+export interface VueEchartsProps {
+  option?: Record<string, unknown>;
+  noMerge?: boolean;
+  renderer?: string;
+  carousel?: Record<string, unknown> | null;
+}
 
+export interface VueEchartsMethods {
   initCarousel(): void;
   clearCarousel(): void;
   resizeChart(): void;
   getChart(): any;
-
 }
+
+declare const VueEcharts: DefineComponent<
+  VueEchartsProps,
+  {},
+  {},
+  {},
+  {},
+  VueEchartsMethods
+>;
+
+export default VueEcharts;

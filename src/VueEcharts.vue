@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import echarts from "echarts";
+import * as echarts from "echarts";
 import tooltipCarousel from "./echarts-tooltip-carousel";
 export default {
   name: "VueEcharts",
@@ -40,7 +40,7 @@ export default {
   activated() {
     this.resizeChart();
   },
-  destroyed() {
+  beforeUnmount() {
     this.clearCarousel();
     this.myChart.dispose();
     window.removeEventListener("resize", this.resizeChart);
